@@ -4,7 +4,7 @@ class Hanoi {
   static main(args) {
 
     def stapelListe = [[3,2,1] as Stack, [] as Stack, [] as Stack] as List
-    println "Stapel: " + stapelListe
+    printStapelListe(stapelListe)
 
     def alleSteineAufLetztemStapel = stapelListe[0].size() + stapelListe[1].size() > 0
 
@@ -26,10 +26,25 @@ class Hanoi {
         } else {
           println "Fehler! Oberer Stein muss größer als unterer Stein sein!"
         }
-        println "Stapel: " + stapelListe
+        printStapelListe(stapelListe)
         alleSteineAufLetztemStapel = stapelListe[0].size() + stapelListe[1].size() > 0 // WH!!!
         // -> do while ...
       }
+      printStapelListe(stapelListe)
       println 'Fertig!'
+    }
+
+    static printStapelListe(stapelListe) {
+      println ""
+      def steinBilder = ["   |   ","   #   ","  ###  "," ##### "]
+      4.times { steinIndex ->
+        3.times { stapelIndex ->
+          print steinBilder[stapelListe[stapelIndex][3-steinIndex]?: 0]
+        }
+        println ""
+      }
+      println "---------------------"
+      println "   1      2      3"
+      println ""
     }
   }

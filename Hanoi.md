@@ -1,7 +1,6 @@
 Die Türme von Hanoi
 ====================
 
-
 Türme von Hanoi
 
 ```
@@ -56,7 +55,8 @@ Schritte
     2 3
     ...
 
-2. Grober Ablauf im Programm
+- Grober Ablauf im Programm
+```
 def listeVonStapeln
 while (!alleSteineAufLetztemStapel) {
 	def eingabe = naechsterZug()
@@ -66,6 +66,42 @@ while (!alleSteineAufLetztemStapel) {
 			// von Stapel X entfernen
 			// auf Stapel Y auflegen
 	}
+```
 
-3. s.u. ...
+- s.u. ...
  -> hier erst mal mit 3 Stapeln und 5 Steinen ... - Konfiguration folgt ...
+
+
+Erste Grafik
+-----------------
+
+```
+Axels-MBP-2:hanoi axelklinger$ groovy Hanoi.groovy
+
+   |      |      |   
+   #      |      |   
+  ###     |      |   
+ #####    |      |   
+---------------------
+   1      2      3
+
+Nächster Zug? 1 3
+
+   |      |      |   
+   |      |      |   
+  ###     |      |   
+ #####    |      #   
+---------------------
+   1      2      3
+
+Nächster Zug? 1 2
+
+   |      |      |   
+   |      |      |   
+   |      |      |   
+ #####   ###     #   
+---------------------
+   1      2      3
+
+Nächster Zug?
+```
